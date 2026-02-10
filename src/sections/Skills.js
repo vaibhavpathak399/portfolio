@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 
 export default function Skills() {
@@ -13,11 +15,10 @@ export default function Skills() {
   ];
 
   return (
-    <section className="py-28 px-6 relative">
-      {/* subtle background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-transparent" />
-
+    <section className="py-28 px-6 bg-gray-900 text-white">
       <div className="relative max-w-6xl mx-auto text-center">
+
+        {/* Heading animation */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -28,6 +29,7 @@ export default function Skills() {
           My <span className="text-blue-500">Skills</span>
         </motion.h2>
 
+        {/* Skills grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {skills.map((skill, index) => (
             <motion.div
@@ -36,14 +38,15 @@ export default function Skills() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl py-10 hover:scale-110 hover:border-blue-500/60 transition duration-300 cursor-default"
+              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl py-8 hover:scale-105 hover:border-blue-500/50 transition duration-300"
             >
-              <p className="text-sm tracking-widest uppercase text-gray-300 font-semibold">
+              <p className="text-sm tracking-widest text-gray-300 font-semibold">
                 {skill}
               </p>
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );
