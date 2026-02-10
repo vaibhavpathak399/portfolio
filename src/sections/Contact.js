@@ -17,6 +17,7 @@ export default function Contact() {
           method="POST"
           className="grid gap-6 max-w-xl mx-auto"
         >
+            
           <input
             type="text"
             name="name"

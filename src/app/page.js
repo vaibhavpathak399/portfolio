@@ -10,12 +10,14 @@ export default function Home() {
       <main className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white flex items-center justify-center px-6">
         <div className="text-center max-w-3xl">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4">
-            Hi, I’m <span className="text-blue-500">Software Developer</span>
+           Hi, I’m <span className="text-blue-500">Vaibhav Pathak</span>
+
           </h1>
 
           <p className="text-gray-400 text-lg md:text-xl mb-6">
-            I build modern, fast and scalable web applications using
-            React, Next.js and Node.js.
+            I’m a Software Developer building modern web applications
+with React, Next.js and Node.js. Open for freelance and full-time roles.
+
           </p>
 
           <div className="flex gap-4 justify-center">
