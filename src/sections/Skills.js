@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export default function Skills() {
   const skills = [
     "HTML",
@@ -11,20 +13,35 @@ export default function Skills() {
   ];
 
   return (
-    <section className="py-20 bg-gray-900 text-white px-6">
-      <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-10">
-          My <span className="text-blue-500">Skills</span>
-        </h2>
+    <section className="py-28 px-6 relative">
+      {/* subtle background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-transparent" />
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="relative max-w-6xl mx-auto text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-4xl md:text-5xl font-extrabold mb-14"
+        >
+          My <span className="text-blue-500">Skills</span>
+        </motion.h2>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {skills.map((skill, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl py-8 hover:scale-105 hover:border-blue-500/50 transition duration-300"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              viewport={{ once: true }}
+              className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl py-10 hover:scale-110 hover:border-blue-500/60 transition duration-300 cursor-default"
             >
-              <p className="text-lg font-semibold">{skill}</p>
-            </div>
+              <p className="text-sm tracking-widest uppercase text-gray-300 font-semibold">
+                {skill}
+              </p>
+            </motion.div>
           ))}
         </div>
       </div>
