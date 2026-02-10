@@ -40,10 +40,15 @@ export default function Projects() {
         <div className="grid gap-8 md:grid-cols-3">
           {projects.map((project, index) => (
             <div
-              key={index}
-              className="bg-gray-900 border border-gray-700 rounded-2xl p-6 hover:border-blue-500 hover:-translate-y-1 transition-all duration-300"
+            key={index}
+                className="bg-gradient-to-br from-white/10 to-white/5
+                    border border-white/10 rounded-3xl p-8
+                    hover:scale-[1.03] hover:border-blue-500/50
+                    transition duration-300"
             >
-              <h3 className="text-xl font-semibold mb-3">
+
+              <h3 className="text-2xl font-bold mb-3">
+
                 {project.title}
               </h3>
 

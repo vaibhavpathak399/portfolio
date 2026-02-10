@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import About from "../sections/About";
 import Skills from "../sections/Skills";
 import Projects from "../sections/Projects";
@@ -6,42 +7,45 @@ import Contact from "../sections/Contact";
 export default function Home() {
   return (
     <>
-      {/* HERO SECTION */}
-      <main className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white flex items-center justify-center px-6">
-        <div className="text-center max-w-3xl">
-          
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-4">
+      <main className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+
+        {/* background glow */}
+        <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-blue-600/30 rounded-full blur-[120px]" />
+        <div className="absolute top-40 right-0 w-[400px] h-[400px] bg-purple-600/20 rounded-full blur-[120px]" />
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative z-10 text-center max-w-4xl"
+        >
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
             Hi, I’m <span className="text-blue-500">Vaibhav Pathak</span>
           </h1>
 
-          <p className="text-gray-400 text-lg md:text-xl mb-6">
-            I’m a Software Developer building modern web applications
-            with React, Next.js and Node.js.
-            <br />
-            Open for freelance and full-time roles.
+          <p className="text-lg md:text-xl text-gray-400 mb-10">
+            Software Developer crafting modern, scalable and high-performance
+            web applications using Next.js, React and Node.js.
           </p>
 
-          <div className="flex gap-4 justify-center">
+          <div className="flex justify-center gap-6">
             <a
               href="#projects"
-              className="px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition"
+              className="px-8 py-4 bg-blue-600 rounded-xl text-lg font-semibold hover:bg-blue-700 transition"
             >
-              View Projects
+              View Work
             </a>
 
             <a
-              href="/resume.pdf"
-              target="_blank"
-              className="px-6 py-3 border border-gray-500 rounded-lg hover:bg-gray-800 transition"
+              href="#contact"
+              className="px-8 py-4 border border-gray-600 rounded-xl text-lg hover:bg-white/5 transition"
             >
-              Download Resume
+              Contact Me
             </a>
           </div>
-
-        </div>
+        </motion.div>
       </main>
 
-      {/* SECTIONS */}
       <About />
       <Skills />
       <Projects />
