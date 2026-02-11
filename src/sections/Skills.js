@@ -1,7 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
-
 export default function Skills() {
   const skills = [
     "HTML",
@@ -15,38 +11,26 @@ export default function Skills() {
   ];
 
   return (
-    <section className="py-28 px-6 bg-gray-900 text-white">
-      <div className="relative max-w-6xl mx-auto text-center">
-
-        {/* Heading animation */}
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-extrabold mb-14"
-        >
+    <section className="py-24 px-6 bg-gray-950">
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="text-4xl font-bold mb-14">
           My <span className="text-blue-500">Skills</span>
-        </motion.h2>
+        </h2>
 
-        {/* Skills grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
-          {skills.map((skill, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              viewport={{ once: true }}
-              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl py-8 hover:scale-105 hover:border-blue-500/50 transition duration-300"
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {skills.map((skill, i) => (
+            <div
+              key={i}
+              className="bg-white/5 border border-white/10 rounded-xl py-6
+                         hover:border-blue-500/40 hover:-translate-y-1
+                         transition duration-300"
             >
-              <p className="text-sm tracking-widest text-gray-300 font-semibold">
+              <p className="text-sm font-semibold tracking-widest text-gray-300">
                 {skill}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
-
       </div>
     </section>
   );
